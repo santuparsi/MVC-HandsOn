@@ -1,0 +1,64 @@
+﻿@model Employee
+@{
+	ViewData["Title"] = "Create";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+	table {
+		text-align: center;
+	}
+</style>
+<h1>Create</h1>
+@using (Html.BeginForm("Index", "Home"))
+{
+	<table class="table table-responsive-md">
+		<tr>
+			<td>Id</td>
+			<td>@Html.EditorFor(m=>m.Eid)</td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td>@Html.TextBoxFor(m=>m.Ename)</td>
+		</tr>
+		<tr>
+			<td>Gender</td>
+			<td>
+				Male @Html.RadioButtonFor(m=>m.Gender, false)
+				Female @Html.RadioButtonFor(m => m.Gender, false)
+			</td>
+		</tr>
+		<tr>
+			<td>JoinDate</td>
+			<td>@Html.EditorFor(m=>m.JoinDate)</td>
+		</tr>
+		<tr>
+			<td>Designation</td>
+			<td>@Html.DropDownListFor(m=>m.Desig, new SelectList(new string[] { "Programmer", "TeamLeader", "ProjectLead" }))</td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td>@Html.TextBoxFor(m=>m.Email)</td>
+		</tr>
+		<tr>
+			<td>Mobile</td>
+			<td>@Html.EditorFor(m=>m.Mobile)</td>
+		</tr>
+		<tr>
+			<td>Username</td>
+			<td>@Html.TextBoxFor(m => m.Username)</td>
+		</tr>
+		<tr>
+			<td>Mobile</td>
+			<td>@Html.PasswordFor(m=>m.Password)</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				@Html.CheckBox("IsChecked") Accept all terms and conditions.
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" /></td>
+		</tr>
+
+	</table>
+}

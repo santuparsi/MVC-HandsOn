@@ -1,0 +1,30 @@
+﻿@model List<Employee>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Employee List</h1>
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Designation</th>
+			</tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Eid</td>
+                    <td>@item.Ename</td>
+                    <td>@item.Desig</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

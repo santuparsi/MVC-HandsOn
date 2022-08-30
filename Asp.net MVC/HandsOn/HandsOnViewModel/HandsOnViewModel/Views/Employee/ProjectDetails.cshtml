@@ -1,0 +1,42 @@
+﻿@model EmployeeProjectViewModel
+ 
+@{
+    ViewData["Title"] = "ProjectDetails";
+}
+
+<h1>ProjectDetails</h1>
+<div class="container">
+    <table class="table">
+        <tr>
+            <td>Project ID</td>
+            <td>@Model.Project.Pid</td>
+            <td>Project Name</td>
+            <td><label>@Model.Project.Pname</label></td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td>@Model.Project.StartDate</td>
+            <td>End Date</td>
+            <td>@Model.Project.EndDate</td>
+        </tr>
+       
+
+    </table>
+    <hr />
+	<table class="table">
+		<tr>
+			<th>Eid</th>
+			<th>Ename</th>
+			<th>Designation</th>
+		</tr>
+		@foreach (var item in Model.Employees)
+		{
+			<tr>
+				<td>@item.Eid</td>
+				<td>@item.Ename</td>
+				<td>@item.Desig</td>
+			</tr>
+		}
+	</table>
+</div>
+

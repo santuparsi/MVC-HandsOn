@@ -1,0 +1,104 @@
+﻿@model Employee
+@{
+	ViewData["Title"] = "Create";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+	table {
+		text-align: center;
+	}
+	span
+	{
+		color:red;
+	}
+</style>
+<h1>Create</h1>
+<form asp-action="Create2" asp-controller="Employee">
+	<table class="table table-responsive-md">
+		<tr>
+			<td>Id</td>
+			<td>
+				<input type="text" asp-for="Eid" />
+				<span asp-validation-for="Eid"></span>
+			</td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td>
+				<input asp-for="Ename" />
+				<span asp-validation-for="Ename"></span>
+			</td>
+		</tr>
+		<tr>
+			<td>Gender</td>
+			<td>
+				Male <input type="radio" asp-for="Gender" value="Male" />
+				Female <input type="radio" asp-for="Gender" value="Female" />
+			</td>
+		</tr>
+		<tr>
+			<td>JoinDate</td>
+			<td>
+				<input type="date" asp-for="JoinDate" />
+
+			</td>
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td>
+				<input type="number" asp-for="Age" />
+				<span asp-validation-for="Age"></span>
+
+			</td>
+		</tr>
+		<tr>
+			<td>Designation</td>
+			<td>
+				<select asp-for="Desig"
+						asp-items='new SelectList(new string[] { "Programmer", "TeamLeader", "ProjectLead" })'>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td>
+				<input type="email" asp-for="Email" />
+				<span asp-validation-for="Email"></span>
+			</td>
+		</tr>
+		<tr>
+			<td>Mobile</td>
+			<td>
+				<input type="text" asp-for="Mobile" />
+				<span asp-validation-for="Mobile"></span>
+			</td>
+		</tr>
+		<tr>
+			<td>Username</td>
+			<td><input type="text" asp-for="Username" /></td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td>
+				<input type="password" asp-for="Password" />
+				<span asp-validation-for="Password"></span>
+			</td>
+		</tr>
+		<tr>
+			<td>ConfirmPassword</td>
+			<td>
+				<input type="password" asp-for="ConfirmPassword" />
+				<span asp-validation-for="ConfirmPassword"></span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="checkbox" /> Accept all terms and conditions.
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" /></td>
+		</tr>
+
+	</table>
+</form>

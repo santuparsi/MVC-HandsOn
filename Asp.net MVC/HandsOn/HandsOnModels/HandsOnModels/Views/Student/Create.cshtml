@@ -1,0 +1,42 @@
+﻿@model Student 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div>
+        <form action=@Url.Action("Create","Student") method="post">
+			<table>
+				<tr>
+					<td>ID</td>
+					<td><input type="number" name="Sid" /></td>
+				</tr>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="Sname" /></td>
+				</tr>
+				<tr>
+					<td>DOB</td>
+					<td><input type="date" name="DOB" /></td>
+				</tr>
+				<tr>
+					<td>Address</td>
+					<td><textarea name="Adress"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="Create" />
+					</td>
+				</tr>
+			</table>
+        </form>
+    </div>
+</body>
+</html>

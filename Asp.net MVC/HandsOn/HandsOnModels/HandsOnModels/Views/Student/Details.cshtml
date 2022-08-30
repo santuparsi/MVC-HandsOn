@@ -1,0 +1,39 @@
+﻿@model HandsOnModels.Models.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Student Details</title>
+	<style>
+		body
+		{
+			background-color:aquamarine;
+		}
+	</style>
+</head>
+
+<body>
+	@{
+		if (Model != null)
+		{
+			<pre>
+				ID:@Model.Sid
+				Name:@Model.Sname
+				DOB:@Model.DOB
+				Address:@Model.Adress
+			</pre>
+		}
+		else
+		{
+			<span style="color:red"> @ViewData["err"]</span>
+		}
+
+	}
+	<a href=@Url.Action("Index")>Back</a>
+</body>
+</html>
