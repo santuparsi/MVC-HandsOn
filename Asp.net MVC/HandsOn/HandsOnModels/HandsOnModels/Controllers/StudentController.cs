@@ -19,6 +19,7 @@ namespace HandsOnModels.Controllers
             List<Student> students=repository.GetStudents();
             return View(students); //pasing list of students ot view page.
         }
+        [Route("Student/Details/{sid}")]
         public IActionResult Details(int sid)
         {
             Student student=repository.GetStudent(sid);
